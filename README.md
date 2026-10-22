@@ -1,60 +1,107 @@
-# Model Analysis Package
+# Model Analysis Package — IFRS 9 ECL & Credit Model Validation
 
-**AI-assisted model development and validation, with governance and reproducibility as first-class artifacts.**
+**A portfolio of two credit-risk projects and the five governance deliverables that connect them.**
 
-This repository is a demonstration of how to package the evidence that a model is (or is not) fit for its stated purpose. It contains two projects, five governance documents, and a shared prompt library. Each project was developed with AI assistance under a fixed prompt protocol; the analyst owns every decision and every interpretation.
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![IFRS 9](https://img.shields.io/badge/IFRS%209-Methodology%20Demo-orange)
+![OSFI E-23](https://img.shields.io/badge/OSFI%20E--23-Aligned-lightgrey)
+![SR 11-7](https://img.shields.io/badge/SR%2011--7-Partially%20Aligned-yellow)
+![Status](https://img.shields.io/badge/Status-Portfolio%20Artifact-lightgrey)
 
-## What's in here
+---
 
-- **Two projects**, each with their own frozen deliverables, notebooks, and outputs:
-  - **Fannie Mae IFRS 9** — a methodology demonstration of IFRS 9 Expected Credit Loss (ECL) on public mortgage data. Verdict: analyst-authored validation opinion.
-  - **Lending Club Credit Risk** — an independent validation of a collections prioritization model on public consumer data. Verdict: machine-authored by Notebook 03 (`authored_by: "NB03"`), inherited by Notebook 04.
-- **Five governance documents**, each with a per-project instance:
-  1. Model Risk Remediation Plan
-  2. Model Risk Validation Report
-  3. IFRS 9 Stress Testing Framework (Fannie Mae only)
-  4. AI Interaction Record
-  5. Reproducibility Record
+## The business problem
 
-## Start here
+A bank's model risk function has two questions to answer about any credit model before it can be deployed:
 
-If you have **five minutes**: read [`docs/01-map-cover.md`](docs/01-map-cover.md) — the cover explains what this package is and what it does not claim to be.
+1. **Is the model fit for purpose?** (validation — Lending Club project)
+2. **What does it mean for capital and provisioning under stress?** (framework — Fannie Mae project)
 
-If you have **fifteen minutes**: read the cover, then the two Validation Reports:
-- [`docs/03-validation-report/fannie-mae-PR004.md`](docs/03-validation-report/fannie-mae-PR004.md)
-- [`docs/03-validation-report/lending-club-CR001.md`](docs/03-validation-report/lending-club-CR001.md)
+These are different questions, answered by different teams, under different regulatory frameworks. Most portfolio projects answer one or the other. This package answers both — and, critically, shows how the two answers connect through a shared governance layer.
 
-These state the verdict for each project and the specific evidence that supports it.
+**The story in one paragraph.** A model development team built a consumer credit risk model for collections prioritization. They reported AUC 0.865 and requested deployment. Independent validation found that nine post-origination features had inflated the reported performance by 27% (realistic AUC: 0.631), and that the model approved applicants in one U.S. region at 54% of the rate of the highest-approval region. The model was rejected. Separately, a mortgage ECL pipeline was built on Fannie Mae data to demonstrate IFRS 9 stress testing — and, in the process, surfaced a capital-adequacy framing error that would have been cited against the institution in a model risk finding. Both projects are methodology demonstrations, and both are honest about what they do and do not prove.
 
-If you have **an hour**: read the whole `docs/` folder in numeric order (01 → 06), then read one project's `notebooks/` folder end to end.
+---
 
-## What makes this package defensible
+## What's in this package
 
-Three things, and a reviewer should see all three:
+Five deliverables, drawn from two project repositories:
 
-1. **Verdict and evidence are kept separate.** The notebooks produce evidence; the Validation Report states the verdict. In Lending Club, the verdict is machine-authored (NB03) and inherited without recomputation (NB04). In Fannie Mae, it's analyst-authored. Neither project conflates the two.
+| # | Deliverable | Scope | Where it lives |
+|---|---|---|---|
+| 1 | **Model Risk Remediation Plan** | Cross-project, 10 findings, 6-month roadmap | This repo: `deliverables/01_remediation_plan.md` |
+| 2 | **Model Risk Validation Report** | Lending Club only (independent validation opinion) | This repo: `deliverables/02_validation_report_lc.md` |
+| 3 | **IFRS 9 Stress Testing Framework** | Fannie Mae only (ECL + capital coverage) | This repo: `deliverables/03_stress_testing_framework_fm.md` |
+| 4 | **AI Interaction Record** | Cross-project (one template, two instances) | This repo: `deliverables/04_ai_interaction_record.md` |
+| 5 | **Reproducibility Record** | Cross-notebook (one per project + manifest) | This repo: `deliverables/05_reproducibility_record.md` |
 
-2. **Every finding is traceable.** Each finding in the Remediation Plan maps to a finding ID in the project's Findings Register, which maps to a specific notebook phase or artifact. There is no finding without an owner, a deadline, and a verification method.
+**Two project repositories feed these deliverables:**
 
-3. **Reproducibility is evidenced, not asserted.** The Reproducibility Record for each project lists the version registry, freeze log, run log, manifest, and environment. The `verify.yml` CI workflow re-runs the check on every push (see [`.github/workflows/verify.yml`](.github/workflows/verify.yml)).
+- [`lending-club-model-validation`](https://github.com/yourusername/lending-club-model-validation) — the independent validation artifact. **This is where the validation verdict lives.**
+- [`fannie-mae-ifrs9-framework`](https://github.com/yourusername/fannie-mae-ifrs9-framework) — the stress-testing framework artifact. **This is where the ECL methodology lives.**
 
-## What this package does NOT claim
+---
 
-- **Not a production model.** Both projects are methodology demonstrations on public proxy data. Neither is validated against a real institution's portfolio.
-- **Not IFRS 9 compliant.** IFRS 9 compliance is an institution-specific determination, not a claim a demonstration project can make. The Fannie Mae Validation Report names the specific scope and limitations.
-- **Not fair-lending compliant.** The Fannie Mae dataset lacks protected-class attributes; the Lending Club dataset uses a geographic proxy. Both are documented as limitations, not resolved.
-- **Not independently validated in the SR 11-7 sense.** Neither project is a second-line validation. Lending Club's Notebook 03 is an independent validation *of the model*; it is not itself independently validated by a third party.
+## How to read this package
 
-The honesty of the "does not claim" section is what makes the "does claim" sections credible.
+**If you have 5 minutes:** read the [Executive Summary](#executive-summary) below, then the two project READMEs' "How to read this project" sections.
+
+**If you have 30 minutes:** read the two project READMEs in full, then deliverable 2 (Validation Report) and deliverable 3 (Stress Testing Framework). Those are the analytical payloads.
+
+**If you are reviewing for governance rigor:** read all five deliverables, then the AI Interaction Record and Reproducibility Record — those are where the audit trail lives.
+
+**If you are a hiring manager:** the "What this demonstrates about the analyst" section at the bottom is written for you.
+
+---
+
+## Executive summary
+
+### Lending Club — the validation artifact
+
+An independent validation of a consumer credit risk model, following OSFI E-23 and SR 11-7 principles. The validation found:
+
+- **Data leakage:** nine post-origination features inflated the developer-reported AUC from 0.631 (realistic) to 0.865 (claimed) — a **27.1% inflation**. CRITICAL, resolved.
+- **Severe disparate impact:** region-level DI = 0.5414 (SEVERE, below the 0.60 threshold). CRITICAL, open. **This is the primary driver of the REJECT verdict.**
+- **Walk-forward split not implemented:** random stratified split used instead. HIGH, open.
+- **IFRS 9 misalignment:** 16+ day default threshold vs IFRS 9's 30+ day. HIGH, open.
+- **Weak discrimination:** KS = 0.2671, below the conventional 0.30 "weak" threshold. HIGH, open.
+
+**Verdict: 6/10 → HIGH → REJECT.** The rejection is fairness-driven, not performance-driven. AUC 0.631 contributes only 1 of 6 points; fairness (3) and calibration (2) dominate.
+
+### Fannie Mae — the framework artifact
+
+An IFRS 9 ECL stress-testing framework on a 100,000-loan Fannie Mae sample. The framework demonstrates:
+
+- Three-stage IFRS 9 classification (Stage 1: 89.1%, Stage 2: 9.9%, Stage 3: 1.0%)
+- PD/LGD/EAD calibration with documented assumptions (PD 0.95% unconditional, LGD 44.28%, EAD $204,745)
+- Probability-weighted ECL across four scenarios (45/30/15/10 weights): **$2,231 per loan**
+- **Coverage diagnostic** (not capital adequacy): ECL as % of total assets = 22.31% weighted, 75.12% tail
+
+**The framework is a methodology demonstration, not a validated model.** It has documented limitations: SICR-by-construction (Stage 2 = top-decile proxy), PD-cap tail understatement (~30.7%), EAD ratio outside configured band (86.95% vs 50–85%), and no fairness testing possible (no protected attributes in the dataset).
+
+---
+
+## What this package demonstrates
+
+The package is a demonstration of **model risk governance in practice**. It shows:
+
+- **Effective challenge.** The Lending Club validation challenges the developer's performance claim, quantifies the challenge (0.234 AUC points), and reaches a verdict that is not the developer's verdict.
+- **Separation of duties.** The Lending Club verdict lives in the validation notebook; the governance notebook inherits it and does not re-derive it. The `performance_summary_v2.json` artifact records `authored_by: "NB03"` so the chain is auditable.
+- **Claim-authorization discipline.** The Fannie Mae pipeline deliberately does not write a compliance verdict. Every compliance status field is an `[ANALYST: insert status]` placeholder. The analyst writes the verdict; the notebook produces the evidence.
+- **Honest framing.** Both projects name their limitations prominently. The Lending Club README says "not as claimed; no; partially; and not without remediation." The Fannie Mae README says "what this project does NOT demonstrate" before it says what it does.
+- **Reproducibility.** Every artifact carries `run_id`, `notebook_version`, and a SHA-256-16 hash. Every notebook has an audit log. Same data + same seed = same artifacts.
+
+---
+
+## What this package does NOT demonstrate
+
+- **Production model deployment.** Both projects are methodology demonstrations. Neither is a production model.
+- **Regulatory compliance.** Compliance is a determination an institution makes against its obligations. A portfolio project cannot make that determination for itself, and these projects do not.
+- **Independent validation of the Fannie Mae framework.** The Fannie Mae project is a framework, not a validated model. There is no second-line validation of it. **No Fannie Mae Validation Opinion exists in this package, because the Fannie Mae project is not a validated model — it is a framework with documented limitations.**
+- **Canadian applicability.** Both projects use U.S. data. Neither is validated for Canadian portfolios (OSFI E-23 scope restriction).
+
+The distinction between "the Lending Club project is validated" and "the Fannie Mae project is a framework" is the most important thing to understand about this package. It is why only one Validation Report exists.
+
+---
 
 ## Repository structure
-
-See [`STRUCTURE.md`](STRUCTURE.md) for the directory layout and the role of each folder.
-
-## How to verify
-
-Every artifact in this repository is hashed and listed in [`version-registry.csv`](version-registry.csv). To verify a project's reproducibility:
-
-```bash
-python scripts/verify_chain.py --project fannie-mae
-python scripts/verify_chain.py --project lending-club
