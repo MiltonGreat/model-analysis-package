@@ -2,9 +2,6 @@
 
 **Document ID:** RGA-001  
 **Version:** 1.0  
-**Author:** `[ANALYST: name]`  
-**Owner:** `[ANALYST: role — Head of AI Governance]`  
-**Date:** `[ANALYST: date]`  
 **Classification:** Internal  
 **Related documents:** AI Governance Policy (POL-AI-001), OSFI E-23 (Model Risk Management), SR 11-7, ISO/IEC 42001
 
