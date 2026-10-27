@@ -1,10 +1,5 @@
 # Model Analysis Package — Executive Summary
 
-**Author:** `[ANALYST: name]`  
-**Role:** `[ANALYST: role — Model Risk / Independent Validator]`  
-**Status:** Portfolio demonstration — two independent model risk projects  
-**Last updated:** `[ANALYST: date]`
-
 ---
 
 ## What this is
@@ -37,7 +32,7 @@ The two projects share a common structure — the twelve MAP deliverables, the s
 
 **Audience:** Model Risk Committee members.
 
-**Bundle:** [Lending Club standalone →](./lending-club/)
+**Bundle:** [Lending Club standalone →](https://github.com/MiltonGreat/credit-risk-model-validation/blob/main/README.md)
 
 ---
 
@@ -57,7 +52,7 @@ The two projects share a common structure — the twelve MAP deliverables, the s
 
 **Audience:** IFRS 9 modellers, internal audit, regulators.
 
-**Bundle:** [Fannie Mae standalone →](./fannie-mae/)
+**Bundle:** [Fannie Mae standalone →](https://github.com/MiltonGreat/fannie-mae-ifrs9-portfolio/tree/main)
 
 ---
 
@@ -146,67 +141,23 @@ A model risk function that only does model validation would not know how to vali
 **For an interviewer or hiring manager:**
 
 1. **This executive summary** — you're reading it.
-2. **[Lending Club Validation Opinion](./lending-club/docs/validation_opinion.md)** — the model validation verdict, in full.
-3. **[Lending Club Findings Register](./lending-club/docs/findings_register.md)** — the 26 findings, 4 CRITICAL, cross-referenced.
-4. **[Fannie Mae Methodology Document](./fannie-mae/docs/methodology.md)** — the IFRS 9 parameterization, in full.
-5. **[Fannie Mae Findings Register](./fannie-mae/docs/findings_register.md)** — the 13 documented limitations.
+2. **[Lending Club Validation Opinion](https://github.com/MiltonGreat/credit-risk-model-validation/blob/main/reports/validation_opinion.md)** — the model validation verdict, in full.
+3. **[Lending Club Findings Register](https://github.com/MiltonGreat/credit-risk-model-validation/blob/main/governance/consolidated-findings-register.md)** — the 26 findings, 4 CRITICAL, cross-referenced.
+4. **[Fannie Mae Methodology Document](https://github.com/MiltonGreat/fannie-mae-ifrs9-portfolio/blob/main/governance/methodology-document.md)** — the IFRS 9 parameterization, in full.
+5. **[Fannie Mae Findings Register](https://github.com/MiltonGreat/fannie-mae-ifrs9-portfolio/blob/main/governance/consolidated-findings-register.md)** — the 13 documented limitations.
 
 **For a validator or model risk professional:**
 
-1. **[Lending Club Decision Criteria Register](./lending-club/docs/dcr.md)** — the thresholds that determine the verdict.
-2. **[Lending Club Risk & Validation Plan](./lending-club/docs/rvp.md)** — the validation contract.
-3. **[Fannie Mae Decision Criteria Register](./fannie-mae/docs/dcr.md)** — the register guards and parameter bounds.
-4. **[Fannie Mae Risk & Validation Plan](./fannie-mae/docs/rvp.md)** — the methodology-validation contract.
+1. **[Lending Club Decision Criteria Registe](https://github.com/MiltonGreat/credit-risk-model-validation/blob/main/governance/decision-criteria-register.md)r** — the thresholds that determine the verdict.
+2. **[Lending Club Risk & Validation Plan](https://github.com/MiltonGreat/credit-risk-model-validation/blob/main/governance/risk-validation-plan.md)** — the validation contract.
+3. **[Fannie Mae Decision Criteria Register](https://github.com/MiltonGreat/fannie-mae-ifrs9-portfolio/blob/main/governance/decision-criteria-register.md)** — the register guards and parameter bounds.
+4. **[Fannie Mae Risk & Validation Plan](https://github.com/MiltonGreat/fannie-mae-ifrs9-portfolio/blob/main/governance/risk-validation-plan.md)** — the methodology-validation contract.
 
 **For a regulator or auditor:**
 
-1. **[Lending Club Approval Record](./lending-club/docs/approval_record.md)** — the formal decision.
-2. **[Lending Club Remediation Plan](./lending-club/docs/remediation_plan.md)** — the path to re-validation.
-3. **[Fannie Mae Approval Record](./fannie-mae/docs/approval_record.md)** — the methodology acceptance.
-4. **[Fannie Mae AI Interaction Record](./fannie-mae/docs/ai_interaction_record.md)** — the AI-assisted changes.
-
----
-
-## Repository structure
-
-```
-model-analysis-package/
-├── README.md  (this file)
-├── executive_summary.md
-│
-├── lending-club/
-│   ├── README.md
-│   ├── notebooks/  (NB01–NB05)
-│   ├── docs/  (the 12 MAP deliverables)
-│   ├── artifacts/  (models, predictions, JSONs, CSVs)
-│   └── changelog.md
-│
-├── fannie-mae/
-│   ├── README.md
-│   ├── notebooks/  (NB01–NB06)
-│   ├── docs/  (the 12 MAP deliverables)
-│   ├── artifacts/  (parameters, manifests, Power BI exports)
-│   └── changelog.md
-│
-└── supporting/
-    ├── ai_interaction_record.md
-    ├── reproducibility_record.md
-    └── two_paradigms.md  (the portfolio-level insight)
-```
-
-**Two standalone bundles + one umbrella.** The Lending Club and Fannie Mae bundles are **self-contained** — each has its own README, its own 12 MAP deliverables, and its own artifacts. The umbrella introduces both and links to them. **A reader can start from either project, or from the umbrella.**
-
----
-
-## How this portfolio was built
-
-**The AI was a tool, not an author.** Every verdict, every severity assignment, every scope decision was human-authored. The AI's contributions are documented in the [AI Interaction Record](./supporting/ai_interaction_record.md):
-
-- **AI-assisted:** code structure, documentation, diagnostic narratives, suggested fixes (E-MXX edits)
-- **Human-authored:** the verdict, the fairness thresholds, the attribution of the REJECT to fairness (not AUC), the scope decisions ("direction only, not magnitude"), the severity assignments
-- **Never AI-assisted:** any decision that appears in the Validation Opinion or the Approval Record
-
-**Reproducibility:** every artifact carries a `run_id` and `notebook_version`. Every notebook uses seed 42. Every run produces an audit log. A reviewer can reproduce the results from the artifacts alone.
+1. **[Lending Club Approval Record](https://github.com/MiltonGreat/credit-risk-model-validation/blob/main/governance/approval-record.md)** — the formal decision.
+2. **[Lending Club Remediation Plan](https://github.com/MiltonGreat/credit-risk-model-validation/blob/main/governance/remediation-plan.md)** — the path to re-validation.
+3. **[Fannie Mae Approval Record](https://github.com/MiltonGreat/fannie-mae-ifrs9-portfolio/blob/main/governance/approval-record.md)** — the methodology acceptance.
 
 ---
 
@@ -218,8 +169,3 @@ model-analysis-package/
 | Fannie Mae | Methodology documented and accepted | MAP Validation Opinion sign-off |
 
 **Nothing here is production-ready.** The Lending Club model is REJECTed (awaiting remediation). The Fannie Mae methodology is accepted as a demonstration, not for production use. **Both are portfolio demonstrations, not deployed systems.**
-
----  
-**LinkedIn:** `[ANALYST: linkedin]`
-
-**Questions about this portfolio:** open an issue in the relevant sub-bundle, or reach out directly.
