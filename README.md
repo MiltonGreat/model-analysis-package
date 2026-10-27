@@ -14,8 +14,8 @@
 
 A bank's model risk function has two questions to answer about any credit model before it can be deployed:
 
-1. **Is the model fit for purpose?** (validation —> [Go to Lending Club repo](https://github.com/MiltonGreat/credit-risk-model-validation.git))
-2. **What does it mean for capital and provisioning under stress?** (framework —> [Go to Fannie Mae project](https://github.com/MiltonGreat/fannie-mae-ifrs9-portfolio.git))
+1. **Is the model fit for purpose?** (validation —> [Go to Lending Club repo](https://github.com/MiltonGreat/credit-risk-model-validation/blob/main/README.md))
+2. **What does it mean for capital and provisioning under stress?** (framework —> [Go to Fannie Mae project](https://github.com/MiltonGreat/fannie-mae-ifrs9-portfolio/tree/main))
 
 These are different questions, answered by different teams, under different regulatory frameworks. Most portfolio projects answer one or the other. This package answers both — and, critically, shows how the two answers connect through a shared governance layer.
 
@@ -37,14 +37,14 @@ Five deliverables, drawn from two project repositories:
 
 **Two project repositories feed these deliverables:**
 
-- [`lending-club-model-validation`](https://github.com/yourusername/lending-club-model-validation) — the independent validation artifact. **This is where the validation verdict lives.**
-- [`fannie-mae-ifrs9-framework`](https://github.com/yourusername/fannie-mae-ifrs9-framework) — the stress-testing framework artifact. **This is where the ECL methodology lives.**
+- [`lending-club-model-validation`](https://github.com/MiltonGreat/credit-risk-model-validation/blob/main/README.md) — the independent validation artifact. **This is where the validation verdict lives.**
+- [`fannie-mae-ifrs9-framework`](https://github.com/MiltonGreat/fannie-mae-ifrs9-portfolio/tree/main) — the stress-testing framework artifact. **This is where the ECL methodology lives.**
 
 ---
 
 ## How to read this package
 
-**If you have 5 minutes:** read the [Executive Summary](#executive-summary) below, then the two project READMEs' "How to read this project" sections.
+**If you have 5 minutes:** read the [Executive Summary](https://github.com/MiltonGreat/model-analysis-package/blob/main/deliverables/EXECUTIVE_SUMMARY.md) below, then the two project READMEs' "How to read this project" sections.
 
 **If you have 30 minutes:** read the two project READMEs in full, then deliverable 2 (Validation Report) and deliverable 3 (Stress Testing Framework). Those are the analytical payloads.
 
