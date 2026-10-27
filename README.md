@@ -101,7 +101,3 @@ The package is a demonstration of **model risk governance in practice**. It show
 - **Canadian applicability.** Both projects use U.S. data. Neither is validated for Canadian portfolios (OSFI E-23 scope restriction).
 
 The distinction between "the Lending Club project is validated" and "the Fannie Mae project is a framework" is the most important thing to understand about this package. It is why only one Validation Report exists.
-
----
-
-## Repository structure
