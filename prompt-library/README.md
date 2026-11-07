@@ -77,39 +77,6 @@ The project prompts are specific to each project. They are organized by notebook
 
 ---
 
-## The Prompt Entry Format
-
-Every prompt in the library has the same seven fields:
-
-================================================================================
-PROMPT: {name}
-================================================================================
-Version: {version}
-Author: {name}
-Date: {date}
-Task: {one-sentence description}
-
-PROMPT TEXT:
-
-{the exact prompt text}
-
-ACCEPTANCE CRITERIA:
-
-    {criterion 1}
-
-    {criterion 2}
-
-NOTES:
-
-{when to use, when not to use, common pitfalls}
-
-VERSIONS:
-
-v1.0 — {date} — {change description}
-================================================================================
-
----
-
 ## How to Use the Library
 
 ### For a New Project
@@ -149,53 +116,12 @@ This is the **AI Interaction Record**. It is the evidence that the prompt was us
 
 ---
 
-## Contributing
-
-If you want to add a prompt to the library:
-
-1. Write the prompt.
-2. Test it on a real project.
-3. Document the acceptance criteria.
-4. Add it to the appropriate folder.
-5. Update the `version_log.md`.
-6. Sign off.
-
-The library is a living artifact. It grows as the method grows.
-
----
-
-## Version
-
-- **Current version:** 1.0
-- **Last updated:** [YYYY-MM-DD]
-- **Maintainer:** [Your Name]
-- **License:** [Your choice — MIT, CC-BY, or other]
-
----
-
-## Related Resources
-
-- **The manual:** `../manual/`
-- **The template package:** `../template-package/`
-- **The books:** `../books/`
-- **The worked examples:** `examples/`
-
----
-
 ## References
 
 The prompt library is based on the following sources:
 
-- **Book 1** — *Risk Model Analysis: A Practical Guide to Problem Solving* (2026)
-- **Book 2** — *Controlled Delegation: How Teams Use AI Without Losing Ownership* (2026)
 - **The manual** — *Controlled Delegation: An Operations Manual for AI-Assisted Risk Analysis* (2026)
 - **Regulatory anchors:** IFRS 9, OSFI E-23, SR 11-7, ECOA, Basel III, NIST AI RMF, ISO/IEC 42001
-
----
-
-## Contact
-
-For questions or contributions, contact [Your Name] at [email].
 
 ---
 
