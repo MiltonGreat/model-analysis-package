@@ -19,7 +19,11 @@ A bank's credit risk model has two questions to answer before it can be deployed
 
 These are different questions, answered by different teams, under different regulatory frameworks. Most portfolio projects answer one or the other. This package answers both — and, critically, shows how the two answers connect through a shared governance layer.
 
-**The story in one paragraph.** A model development team built a consumer credit risk model for collections prioritization. They reported AUC 0.865 and requested deployment. Independent validation found that nine post-origination features had inflated the reported performance by 27% (realistic AUC: 0.631), and that the model approved applicants in one U.S. region at 54% of the rate of the highest-approval region. The model was rejected. Separately, a mortgage ECL pipeline was built on Fannie Mae data to demonstrate IFRS 9 stress testing — and, in the process, surfaced a capital-adequacy framing error that would have been cited against the institution in a model risk finding. Both projects are methodology demonstrations, and both are honest about what they do and do not prove.
+**The story in two paragraph.** 
+
+A model development team built a consumer credit risk model for collections prioritization. They reported AUC 0.865 and requested deployment. Independent validation found that nine post-origination features had inflated the reported performance by 27% (realistic AUC: 0.631), and that the model approved applicants in one U.S. region at 54% of the rate of the highest-approval region. The model was rejected. 
+
+Separately, a mortgage ECL pipeline was built on Fannie Mae data to demonstrate IFRS 9 stress testing — and, in the process, surfaced a capital-adequacy framing error that would have been cited against the institution in a model risk finding. Both projects are methodology demonstrations, and both are honest about what they do and do not prove.
 
 ---
 
