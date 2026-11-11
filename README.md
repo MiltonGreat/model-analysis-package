@@ -29,7 +29,9 @@ Separately, a mortgage ECL pipeline was built on Fannie Mae data to demonstrate 
 
 ## What's in this package
 
-The package contains **three layers of artifacts**, each answering a different question.
+The package contains **three layers of artifacts** — the project deliverables, the governance framework, and the project governance artifacts — organized around **two projects**, each following the **twelve-deliverable MAP structure**.
+
+**The three layers are the package-level view.** They describe how the artifacts are organized across the package. **The twelve-deliverable MAP structure is the per-project view** — it describes the structure within each project. A reader who wants the package's organization reads the three layers; a reader who wants the per-project structure reads the twelve-deliverable table in the [`EXECUTIVE_SUMMARY.md`](deliverables/EXECUTIVE_SUMMARY.md).
 
 ### Layer 1 — Project deliverables (7 files in `deliverables/`)
 
@@ -43,7 +45,7 @@ These are the cross-project records that summarize what each project found.
 | 4 | **Reproducibility Record** | Cross-notebook (one per project + manifest) | `deliverables/05_reproducibility_record.md` |
 | 5 | **Model Risk Remediation Plan** | Cross-project, 10 findings in scope, 6-month roadmap | `deliverables/remediation_plan.md` |
 | 6 | **Model Risk Remediation Plan (PDF render)** | A PDF render of item 5, for offline reading | `deliverables/Model Risk Remediation Plan .pdf` |
-| 7 | **Executive Summary** | The package-level summary (12 MAP deliverables, two paradigms, side-by-side verdicts) | `deliverables/EXECUTIVE_SUMMARY.md` |
+| 7 | **Executive Summary** | The package-level navigational document — the 12 MAP deliverables, the two paradigms, the side-by-side verdicts | `deliverables/EXECUTIVE_SUMMARY.md` |
 
 ### Layer 2 — Governance framework (3 files in `AI Policy/`)
 
@@ -55,24 +57,54 @@ These are the **enterprise-level standards** the two projects are assessed again
 | 9 | **Regulatory Gap Analysis (OSFI E-23)** | The gap analysis that maps OSFI E-23 requirements to the bank's controls. 27 of 32 requirements met (84%); 5 partially met; 0 not met. This is the artifact that makes the policy's E-23 alignment claim demonstrable. | `AI Policy/REGULATORY_GAP_ANALYSIS.md` |
 | 10 | **AI Vendor Governance Review Template** | A repeatable process for assessing third-party AI vendors: evidence hierarchy, five-dimension scorecard, tier-based thresholds, conditions and monitoring plan. | `AI Policy/VENDOR_GOVERNANCE_REVIEW_TEMPLATE.md` |
 
-### Layer 3 — Project governance artifacts (20 files across the two project repos)
+### Layer 3 — Project governance artifacts (22 files across the two project repos)
 
-Each project has its own `governance/` folder containing the artifacts that support the project's Validation Report or Stress Testing Framework. These follow the 12-deliverable MAP structure. A reader who wants the full evidence trail follows the project READMEs to those folders.
+Each project has its own `governance/` folder containing the artifacts that support the project's Validation Report or Stress Testing Framework. These follow the 12-deliverable MAP structure. **Both folders are now complete.**
 
-- **Fannie Mae** — 9 files in `governance/` (`analytical-specification.md`, `approval-record.md`, `code-analysis-results.md`, `consolidated-findings-register.md`, `decision-criteria-register.md`, `feature-decision-logs.md`, `methodology-document.md`, `problem-definition.md`, `risk-validation-plan.md`).
-- **Lending Club** — 11 files in `governance/` (`analysis-code-results.md`, `analytical-specification.md`, `approval-record.md`, `consolidated-findings-register.md`, `data-specifications.md`, `decision-criteria-register.md`, `features-decision-log.md`, `methodology-document.md`, `problem_definition.md`, `remediation-plan.md`, `risk-validation-plan.md`).
+**Fannie Mae** — 10 files in `governance/`:
+`analytical-specification.md`, `approval-record.md`, `code-analysis-results.md`, `consolidated-findings-register.md`, `data-specification.md`, `decision-criteria-register.md`, `feature-decision-logs.md`, `methodology-document.md`, `problem-definition.md`, `risk-validation-plan.md`.
+
+**Lending Club** — 12 files in `governance/`:
+`analysis-code-results.md`, `analytical-specification.md`, `approval-record.md`, `consolidated-findings-register.md`, `data-specifications.md`, `decision-criteria-register.md`, `features-decision-log.md`, `methodology-document.md`, `problem_definition.md`, `remediation-plan.md`, `risk-validation-plan.md`, `validation-opinion.md`.
 
 ### The README is the entry point to 30+ artifacts
 
-A reader opening this package for the first time sees **30+ files across three categories**. The README is the artifact that names them, groups them, and states the synthesis that connects them. It is not a deliverable in the same sense as the seven files in `deliverables/` — it is the **navigational artifact** that makes the other 30+ files readable as a package.
+A reader opening this package for the first time sees **32 files across three categories**. The README is the artifact that names them, groups them, and states the synthesis that connects them. It is not a deliverable in the same sense as the seven files in `deliverables/` — it is the **navigational artifact** that makes the other 32 files readable as a package.
 
 The synthesis itself is in the "What this package demonstrates" section below.
 
 ---
 
+## The twelve MAP deliverables — the per-project structure
+
+Both projects use the same twelve-deliverable structure. **This is the per-project view** — each project's `governance/` folder contains the twelve artifacts. A reader who wants the package-level view reads the three layers above; a reader who wants the per-project view reads this table.
+
+| # | Deliverable | What it does | Lending Club | Fannie Mae |
+|---|---|---|---|---|
+| 1 | **Problem Definition Record** | Defines the problem, target, scope, success criteria | ✅ | ✅ |
+| 2 | **Analytical Specification** | Specifies what the analysis must produce | ✅ | ✅ |
+| 3 | **Data Specification** | Documents the data, quality, leakage, limitations | ✅ | ✅ |
+| 4 | **Feature Decision Log** | Records every feature's include/exclude decision | ✅ | ✅ |
+| 5 | **Methodology Document** | Describes how the model/methodology works | ✅ | ✅ |
+| 6 | **Risk & Validation Plan** | Specifies what will be tested, and who decides | ✅ | ✅ |
+| 7 | **Decision Criteria Register** | Records every threshold, band, and weight | ✅ | ✅ |
+| 8 | **Findings Register** | Consolidates every finding across the pipeline | ✅ | ✅ |
+| 9 | **Remediation Plan** | Specifies how to move from verdict to re-validation | ✅ | ✅ |
+| 10 | **Validation Opinion** | Authors the verdict (the human judgment) | ✅ | **N/A — framework, not validated model** |
+| 11 | **Approval Record** | Records the formal decision and signatures | ✅ | ✅ |
+| 12 | **Analysis Code & Results** | Indexes the code and summarizes the results | ✅ | ✅ |
+
+**On the Fannie Mae Validation Opinion.** The FM Validation Opinion is **not absent by accident** — it is **intentionally N/A**. The Fannie Mae project is a framework, not a validated model. A framework that has not been independently validated should not have a Validation Opinion claiming it has. The FM `README`'s "what this framework does NOT demonstrate" section is the definitive statement.
+
+**On the Lending Club Validation Opinion.** The LC Validation Opinion **exists** (this session's earlier work). It is the one document the LC `governance/` folder was missing; it has now been drafted.
+
+**Folder completeness.** Before this session, the FM `governance/` folder had 9 of the 12 deliverables and the LC `governance/` folder had 11 of the 12. **After this session, both folders are complete** — 10 of 12 in FM (with the Validation Opinion N/A) and 12 of 12 in LC.
+
+---
+
 ## How to read this package
 
-**If you have 5 minutes:** read the [Executive Summary](deliverables/EXECUTIVE_SUMMARY.md) (the deliverable file, not this README's executive summary below), then the two project READMEs' "How to read this project" sections.
+**If you have 5 minutes:** read the [`EXECUTIVE_SUMMARY.md`](deliverables/EXECUTIVE_SUMMARY.md) (the deliverable file, not this README's executive summary below), then the two project READMEs' "How to read this project" sections.
 
 **If you have 30 minutes:** read the two project READMEs in full, then deliverable 2 (Validation Report) and deliverable 3 (Stress Testing Framework). Those are the analytical payloads.
 
@@ -82,13 +114,19 @@ The synthesis itself is in the "What this package demonstrates" section below.
 
 **If you want the synthesis:** read this README from start to finish. The "What this package demonstrates" section is the synthesis; the two layers of artifacts above are the parts.
 
+**On the two executive summaries.** This README has its own "Executive summary" section below, and there is also an [`EXECUTIVE_SUMMARY.md`](deliverables/EXECUTIVE_SUMMARY.md) deliverable. **They are different documents with different jobs:**
+- **This README's executive summary** is the **package-level summary** — it summarizes the two projects for a reader who wants a two-paragraph version of each.
+- **The `EXECUTIVE_SUMMARY.md` deliverable** is the **navigational document** — it presents the twelve MAP deliverables per project, the two-paradigm narrative, and the side-by-side verdicts.
+
+A reader who reads only one gets a coherent picture. A reader who reads both gets the picture at two registers.
+
 ---
 
 ## Executive summary
 
 ### Lending Club — the validation artifact
 
-An independent validation of a consumer credit risk model, following OSFI E-23 and SR 11-7 principles. The executive summary names the top five findings by severity; the full register has 11 (2 CRITICAL, 7 HIGH, 2 MEDIUM; 10 open, 1 resolved).
+An independent validation of a consumer credit risk model, following OSFI E-23 and SR 11-7 principles. **The executive summary names the top five findings by severity; the full register has 11** (2 CRITICAL, 7 HIGH, 2 MEDIUM; 10 open, 1 resolved).
 
 - **Data leakage:** nine post-origination features inflated the developer-reported AUC from 0.631 (realistic) to 0.865 (claimed) — a **27.1% inflation**. CRITICAL, resolved.
 - **Severe disparate impact:** region-level DI = 0.5414 (SEVERE, below the 0.60 threshold). CRITICAL, open. **This is the primary driver of the REJECT verdict.**
@@ -96,13 +134,13 @@ An independent validation of a consumer credit risk model, following OSFI E-23 a
 - **IFRS 9 misalignment:** 16+ day default threshold vs. IFRS 9's 30+ day. HIGH, open.
 - **Weak discrimination:** KS = 0.2671, below the conventional 0.30 "weak" threshold. HIGH, open.
 
-**The remaining six findings** (macro factors missing, low precision, HL degeneracy, counterintuitive SHAP, foreign data applicability, protected-attribute-as-proxy) are in the register. They are real findings; they are not in the executive summary because the top five are what a five-minute reader needs.
+**The remaining six findings** (macro factors missing, low precision, HL degeneracy, counterintuitive SHAP, foreign data applicability, protected-attribute-as-proxy) are in the register.
 
 **Verdict: 6/10 → HIGH → REJECT.** The rejection is fairness-driven, not performance-driven. AUC 0.631 contributes only 1 of 6 points; fairness (3) and calibration (2) dominate.
 
 ### Fannie Mae — the framework artifact
 
-An IFRS 9 ECL stress-testing framework on a 100,000-loan Fannie Mae sample. The framework demonstrates:
+An IFRS 9 ECL stress-testing framework on a 100,000-loan Fannie Mae sample. **The full register has 13 findings** (0 CRITICAL, 5 HIGH, 5 MEDIUM, 3 LOW; 13 documented, 0 open). The framework demonstrates:
 
 - Three-stage IFRS 9 classification (Stage 1: 89.1%, Stage 2: 9.9%, Stage 3: 1.0%)
 - PD/LGD/EAD calibration with documented assumptions (PD 0.95% unconditional, LGD 44.28%, EAD $204,745)
@@ -111,10 +149,12 @@ An IFRS 9 ECL stress-testing framework on a 100,000-loan Fannie Mae sample. The 
 
 **Two findings the framework reports that are not in its headline numbers:**
 
-- **The Severely Adverse scenario is 1.27× the 2008–2010 historical average, below the 1.5× target in the DCR.** The notebook logs an AP-05 warning and an IT-05 investigation trigger. The correct reading is: the assumed scenario multipliers produce a scenario the register considers *insufficiently severe*, not that the portfolio is safe. The 3.0× PD multiplier is an assumption with a precedent label, not a calibrated parameter.
-- **The PD cap does not bind in this run** — Tail Risk PD (4.29%) is below the 20% cap, so the cap-sensitivity analysis reports +0.0% understatement. A run with a higher base PD would show a non-zero effect.
+- **The Severely Adverse scenario is 1.27× the 2008–2010 historical average, below the 1.5× target in the DCR.** The notebook logs an AP-05 warning and an IT-05 investigation trigger. The correct reading is: the assumed scenario multipliers produce a scenario the register considers *insufficiently severe*, not that the portfolio is safe.
+- **The PD cap does not bind in this run** — Tail Risk PD (4.29%) is below the 20% cap, so the cap-sensitivity analysis reports +0.0% understatement.
 
 **The framework is a methodology demonstration, not a validated model.** It has documented limitations: SICR-by-construction (Stage 2 = top-decile proxy), PD-cap tail understatement in the appropriate runs, EAD ratio outside configured band (86.95% vs. 50–85%), and no fairness testing possible (no protected attributes in the dataset).
+
+**On the two counts.** The Lending Club total (11) and the Fannie Mae total (13) are **not the same kind of count.** The LC findings include CRITICAL defects (leakage, fairness); the FM findings are all documented limitations (0 CRITICAL). A reader who compares the two totals sees the volume; a reader who compares the severities sees the *kind*. **The two registers are different sizes because the two projects have different scopes, not because one project is better or worse than the other.**
 
 ---
 
@@ -149,12 +189,35 @@ The package demonstrates **model risk governance at two levels**. Reading the tw
 
 ---
 
+## The two paradigms — model validation vs. methodology validation
+
+The package demonstrates **two paradigms of model risk validation**. The two projects use the same 12-deliverable MAP structure, but the two paradigms produce different verdicts, different controls, and different remediations.
+
+| Dimension | Lending Club (model validation) | Fannie Mae (methodology validation) |
+|---|---|---|
+| **What's validated** | A model | A methodology |
+| **Verdict** | HIGH / REJECT | Accepted as a demonstration |
+| **Primary driver** | Fairness (DI 0.5414, SEVERE) | N/A — limitations documented |
+| **Critical findings** | 2 CRITICAL (leakage, fairness) | 0 |
+| **The control** | Verdict-ownership chain | Parameter-freeze + claim-authorization |
+| **The verdict location** | In the pipeline (NB03) | In the MAP document (Validation Opinion) |
+| **The remediation** | 8 actions, 3-month critical path | Documentation only — no fixes needed |
+| **The story** | A model that failed validation, with a clear path to remediation | A methodology that is defensible because its limitations are explicit, not because it has none |
+
+**The single-sentence distinction:**
+
+> *A model needs to be corrected; a methodology needs to be scoped. The Lending Club project shows the correction path (REJECT → 8 remediation actions → re-validation). The Fannie Mae project shows the scoping path (10 limitations documented → accepted as a demonstration). Both are necessary; both are demonstrated here.*
+
+**The `EXECUTIVE_SUMMARY.md` deliverable presents the same two paradigms in more detail** — the per-project narratives, the "what this demonstrates" lists, and the reader guidance are all in the summary. This section of the README is the paradigm comparison; the summary is the paradigm narration.
+
+---
+
 ## What this package does NOT demonstrate
 
 - **Production model deployment.** Both projects are methodology demonstrations. Neither is a production model.
 - **Regulatory compliance.** Compliance is a determination an institution makes against its obligations. A portfolio project cannot make that determination for itself, and these projects do not.
 - **Independent validation of the Fannie Mae framework.** The Fannie Mae project is a framework, not a validated model. There is no second-line validation of it. **No Fannie Mae Validation Opinion exists in this package, because the Fannie Mae project is not a validated model — it is a framework with documented limitations.** This is a deliberate design decision, not an omission.
-- **A completed Lending Club Validation Opinion.** The Validation Report (`deliverables/02_validation_report_lc.md`) is the evidence base. The Validation Opinion — the signed, single-document verdict — is the one governance artifact the Lending Club project does not yet have. It is on the project's roadmap; the Validation Report is the input it will use.
+- **A completed Lending Club Validation Opinion.** The Validation Report (`deliverables/02_validation_report_lc.md`) is the evidence base. **The Validation Opinion — the signed, single-document verdict — has been drafted this session and is in the LC `governance/` folder.** The draft is the current state; the signed version is the next milestone.
 - **Canadian applicability.** Both projects use U.S. data. Neither is validated for Canadian portfolios (OSFI E-23 scope restriction).
 
 The distinction between "the Lending Club project is validated" and "the Fannie Mae project is a framework" is the most important thing to understand about this package. It is why only one Validation Report exists, and why the Fannie Mae Validation Opinion is intentionally absent.
