@@ -57,12 +57,12 @@ These are the **enterprise-level standards** the two projects are assessed again
 | 9 | **Regulatory Gap Analysis (OSFI E-23)** | The gap analysis that maps OSFI E-23 requirements to the bank's controls. 27 of 32 requirements met (84%); 5 partially met; 0 not met. This is the artifact that makes the policy's E-23 alignment claim demonstrable. | `AI Policy/REGULATORY_GAP_ANALYSIS.md` |
 | 10 | **AI Vendor Governance Review Template** | A repeatable process for assessing third-party AI vendors: evidence hierarchy, five-dimension scorecard, tier-based thresholds, conditions and monitoring plan. | `AI Policy/VENDOR_GOVERNANCE_REVIEW_TEMPLATE.md` |
 
-### Layer 3 — Project governance artifacts (22 files across the two project repos)
+### Layer 3 — Project governance artifacts (23 files across the two project repos)
 
 Each project has its own `governance/` folder containing the artifacts that support the project's Validation Report or Stress Testing Framework. These follow the 12-deliverable MAP structure. **Both folders are now complete.**
 
-**Fannie Mae** — 10 files in `governance/`:
-`analytical-specification.md`, `approval-record.md`, `code-analysis-results.md`, `consolidated-findings-register.md`, `data-specification.md`, `decision-criteria-register.md`, `feature-decision-logs.md`, `methodology-document.md`, `problem-definition.md`, `risk-validation-plan.md`.
+**Fannie Mae** — 11 files in `governance/`:
+`analytical-specification.md`, `approval-record.md`, `code-analysis-results.md`, `consolidated-findings-register.md`, `data-specification.md`, `decision-criteria-register.md`, `feature-decision-logs.md`, `methodology-document.md`, `problem-definition.md`, `remediation-plan.md`, `risk-validation-plan.md`.
 
 **Lending Club** — 12 files in `governance/`:
 `analysis-code-results.md`, `analytical-specification.md`, `approval-record.md`, `consolidated-findings-register.md`, `data-specifications.md`, `decision-criteria-register.md`, `features-decision-log.md`, `methodology-document.md`, `problem_definition.md`, `remediation-plan.md`, `risk-validation-plan.md`, `validation-opinion.md`.
