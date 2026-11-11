@@ -161,24 +161,6 @@ The distinction between "the Lending Club project is validated" and "the Fannie 
 
 ---
 
-## What this demonstrates about the analyst
-
-**A note to the hiring manager reading this package.**
-
-The analyst who built these projects can do four things that are harder than they look.
-
-**First, validate rather than model.** The Lending Club project is not a model-building exercise; it is a validation of a model built by someone else. That requires a different skill from modeling: the ability to look at a claim (*"AUC 0.865"*) and ask *"under what conditions is that claim true?"* The analyst found that the claim was true only under conditions that would never hold at decision time — nine of the features would not be known at origination. That is effective challenge, and it is the core skill of independent validation.
-
-**Second, build a framework that knows its own limits.** The Fannie Mae project demonstrates ECL methodology on data that cannot fully support it — no current credit characteristics, no protected attributes, no Canadian portfolio. A weaker analyst would either not attempt the project, or overclaim the result. This analyst built the pipeline and documented every place where the data does not support the methodology, including the parts where the run's own severity check failed (1.27× vs. 1.5× target). That is governance discipline: *the artifact reports its own limitations accurately.*
-
-**Third, distinguish evidence from judgment.** Both projects enforce a boundary between what the code computes and what the analyst declares. The Lending Club pipeline enforces it through verdict-ownership assertions; the Fannie Mae pipeline enforces it through claim-authorization checks. **The analyst did not just state the principle; they built the enforcement mechanisms.**
-
-**Fourth, connect a project to a policy.** The AI Policy documents in Layer 2 are the enterprise standards the projects are assessed against. The Lending Club verdict is not just "REJECT" — it is "REJECT against the AI Governance Policy's Tier 2 criteria, as demonstrated by the Regulatory Gap Analysis's §5.2 mapping." The Fannie Mae framework is not just "a methodology" — it is "a framework the AI Governance Policy §5.2 Gate 3 requires to be independently validated before it can be Tier 1 or Tier 2." **The package demonstrates that the analyst can work at both the project level and the enterprise level, and can connect them.**
-
-If you are hiring for a model risk, validation, or governance role, the evidence is in the artifacts: the `performance_summary_v2.json` field that records who authored the verdict, the compliance report's placeholder format, the `[ANALYST: insert status]` cells that the notebook refuses to fill, the gap analysis table that maps each OSFI E-23 requirement to a control. **The analyst's discipline is not in the prose; it is in the code that refuses to overclaim and the policy that requires the refusal.**
-
----
-
 ## Related repositories
 
 - [lending-club-model-validation](https://github.com/MiltonGreat/credit-risk-model-validation/blob/main/README.md) — the independent validation artifact
