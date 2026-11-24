@@ -14,7 +14,7 @@
 
 A bank's credit risk model has two questions to answer before it can be deployed:
 
-1. **Is the model fit for purpose?** (validation → [Go to Lending Club repo](https://github.com/MiltonGreat/credit-risk-model-validation/blob/main/README.md))
+1. **Is the model fit for purpose?** (validation → [Go to Lending Club repo](https://github.com/MiltonGreat/credit-risk-model-validation.git))
 2. **What does it mean for capital and provisioning under stress?** (framework → [Go to Fannie Mae project](https://github.com/MiltonGreat/fannie-mae-ifrs9-portfolio/tree/main))
 
 These are different questions, answered by different teams, under different regulatory frameworks. Most portfolio projects answer one or the other. This package answers both — and, critically, shows how the two answers connect through a shared governance layer.
